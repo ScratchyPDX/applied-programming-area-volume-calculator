@@ -16,35 +16,38 @@ function displayMenu() {
   console.log('5. Exit');
 
   const prompt = promptSync();
-  const choice = prompt('Input you choice: ');
-  // Waiting for user input
-  switch (choice) {
-    case '1':
-      console.log('You selected Rectangle.');
-      // Call rectangle area calculation function here
-      rectangle.displayCalculationMenu();
-      break;
-    case '2':
-      console.log('You selected Circle.');
-      // Call circle area calculation function here
-      displayMenu();
-      break;
-    case '3':
-      console.log('You selected Cone.');
-      // Call cone area calculation function here
-      break;
-    case '4':
-      console.log('You selected Cylinder.');
-      // Call cylinder area calculation function here
-      break;
-    case '5':
-      console.log('Exiting the program.');
-      exit(undefined); // Exit the menu
-      break;
-    default:
-      console.log('Invalid selection. Please select a number between 1 and 5.');
-      displayMenu(); // Display the menu again for a valid choice
-      break;
+  let choice = '';
+
+  while (choice !== '5') {
+    choice = prompt('Input you choice: ');
+    // Waiting for user input
+    switch (choice) {
+      case '1':
+        console.log('You selected Rectangle.');
+        // Call rectangle area calculation function here
+        rectangle.displayCalculationMenu();
+        break;
+      case '2':
+        console.log('You selected Circle.');
+        // Call circle area calculation function here
+        break;
+      case '3':
+        console.log('You selected Cone.');
+        // Call cone area calculation function here
+        break;
+      case '4':
+        console.log('You selected Cylinder.');
+        // Call cylinder area calculation function here
+        break;
+      case '5':
+        console.log('Exiting the program.');
+        exit(undefined); // Exit the menu
+        break;
+      default:
+        console.log('Invalid selection');
+        displayMenu(); // Display the menu again for a valid choice
+        break;
+    }
   }
 }
 
