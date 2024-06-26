@@ -1,11 +1,11 @@
 {
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "gts": "^5.3.1",
-    "typescript": "^5.5.2",
-    "@types/node": "20.12.7"
+    "typescript": "^5.5.2"
   },
   "scripts": {
-    "start": "node ./build/hello_world.js",
+    "start": "node ./build/index.js",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",

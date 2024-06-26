@@ -1,3 +1,4 @@
-let message = 'Hello World';
+let message: string = 'Hello World';
 console.log(message);
-message = 'Hello back at uou!';
+message = 'Hello back at you!';
+console.log(message);
