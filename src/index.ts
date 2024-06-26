@@ -20,7 +20,7 @@ function displayMenu() {
   console.log('Enter the number corresponding to your choice:');
 
   // Waiting for user input
-  rl.question('', (answer) => {
+  rl.question('', answer => {
     switch (answer) {
       case '1':
         console.log('You selected Rectangle.');

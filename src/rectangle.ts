@@ -4,7 +4,7 @@ import * as readline from 'readline';
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 export function displayCalculationMenu() {
@@ -15,7 +15,7 @@ export function displayCalculationMenu() {
   console.log('4. Surface Area');
   console.log('Enter the number of your choice:');
 
-  rl.question('', (choice) => {
+  rl.question('', choice => {
     switch (choice) {
       case '1':
         console.log('You selected Perimeter.');
