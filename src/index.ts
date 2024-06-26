@@ -42,13 +42,10 @@ function displayMenu() {
       exit(undefined); // Exit the menu
       break;
     default:
-      console.log(
-        'Invalid selection. Please select a number between 1 and 5.'
-      );
+      console.log('Invalid selection. Please select a number between 1 and 5.');
       displayMenu(); // Display the menu again for a valid choice
       break;
-
-  };
+  }
 }
 
 // Calling the function to display the menu
