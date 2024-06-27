@@ -6,6 +6,8 @@ import {exit} from 'process';
 
 import * as rectangle from './rectangle';
 import * as circle from './circle';
+import * as cone from './cone';
+import * as cylinder from './cylinder';
 
 // Function to display the menu and handle user input
 function displayMenu() {
@@ -25,21 +27,19 @@ function displayMenu() {
     switch (choice) {
       case '1':
         console.log('\nYou selected Rectangle.');
-        // Call rectangle area calculation function here
         rectangle.displayRectangleMenu();
         break;
       case '2':
         console.log('\nYou selected Circle');
-        // Call circle area calculation function here
         circle.displayCircleMenu();
         break;
       case '3':
         console.log('\nYou selected Cone');
-        // Call cone area calculation function here
+        cone.displayConeMenu();
         break;
       case '4':
         console.log('\nYou selected Cylinder');
-        // Call cylinder area calculation function here
+        cylinder.displayCylinderMenu();
         break;
       case '5':
         console.log('\nYou selected Sphere');
