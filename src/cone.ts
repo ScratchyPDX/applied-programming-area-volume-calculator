@@ -1,7 +1,13 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-case-declarations */
 import promptSync from 'prompt-sync';
-import {roundNumber} from './utils';
+import {roundNumber, displaySubMenu} from './utils';
+
+const menuList: { item: number, name: string }[] = [
+  { 'item': 1, 'name': 'Lateral Surface Area (LSA)' },
+  { 'item': 2, 'name': 'Surface Area' },
+  { 'item': 3, 'name': 'Volume' }
+];
 
 export async function displayConeMenu() {
   const prompt = promptSync();
@@ -13,11 +19,8 @@ export async function displayConeMenu() {
     let result = 0.0;
     let height = 0.0;
 
-    console.log('\nSelect the type of calculation:');
-    console.log('1. Lateral Surface Area (LSA)');
-    console.log('2. Surface Area');
-    console.log('3. Volume');
-    console.log('Q. Return to main menu');
+    displaySubMenu(menuList);
+
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':

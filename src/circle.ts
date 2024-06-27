@@ -1,16 +1,19 @@
+/* eslint-disable prettier/prettier */
 import promptSync from 'prompt-sync';
-import {roundNumber} from './utils';
+import {roundNumber, displaySubMenu} from './utils';
+
+const menuList: { item: number, name: string }[] = [
+  { 'item': 1, 'name': 'Diameter' },
+  { 'item': 2, 'name': 'Circumference' },
+  { 'item': 3, 'name': 'Area' }
+];
 
 export async function displayCircleMenu() {
   const prompt = promptSync();
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
-    console.log('\nSelect the type of calculation:');
-    console.log('1. Diameter');
-    console.log('2. Circumference');
-    console.log('3. Area');
-    console.log('Q. Return to main menu');
+    displaySubMenu(menuList);
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
