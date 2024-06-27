@@ -8,6 +8,7 @@ import * as rectangle from './rectangle';
 import * as circle from './circle';
 import * as cone from './cone';
 import * as cylinder from './cylinder';
+import * as sphere from './sphere';
 
 // Function to display the menu and handle user input
 function displayMenu() {
@@ -43,7 +44,7 @@ function displayMenu() {
         break;
       case '5':
         console.log('\nYou selected Sphere');
-        // Call cylinder area calculation function here
+        sphere.displaySphereMenu();
         break;
       case 'Q':
       case 'q':
