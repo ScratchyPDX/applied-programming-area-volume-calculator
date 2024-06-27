@@ -1,4 +1,5 @@
 import promptSync from 'prompt-sync';
+import {roundNumber} from './utils';
 
 export async function displayRectangleMenu() {
   const prompt = promptSync();
@@ -42,7 +43,7 @@ function perimeter() {
   const length = parseFloat(prompt('Enter the length of the rectangle: '));
   const width = parseFloat(prompt('Enter the width of the rectangle: '));
   const result = 2 * (length + width);
-  console.log(`The perimeter of the rectangle is: ${result}`);
+  console.log(`The perimeter of the rectangle is: ${roundNumber(result, 2)}`);
 }
 
 function area() {
@@ -51,7 +52,7 @@ function area() {
   const length = parseFloat(prompt('Enter the length of the rectangle: '));
   const width = parseFloat(prompt('Enter the width of the rectangle: '));
   const result = length * width;
-  console.log(`The area of the rectangle is: ${result}`);
+  console.log(`The area of the rectangle is: ${roundNumber(result, 2)}`);
 }
 
 function volume() {
@@ -61,7 +62,7 @@ function volume() {
   const width = parseFloat(prompt('Enter the width of the rectangle: '));
   const height = parseFloat(prompt('Enter the height of the rectangle: '));
   const result = length * width * height;
-  console.log(`The volume of the rectangle is: ${result}`);
+  console.log(`The volume of the rectangle is: ${roundNumber(result, 2)}`);
 }
 
 function surfaceArea() {
@@ -71,5 +72,5 @@ function surfaceArea() {
   const width = parseFloat(prompt('Enter the width of the rectangle: '));
   const height = parseFloat(prompt('Enter the height of the rectangle: '));
   const result = 2 * (length * width + width * height + height * length);
-  console.log(`The surface area of the rectangle is: ${result}`);
+  console.log(`The surface area of the rectangle is: ${roundNumber(result, 2)}`);
 }

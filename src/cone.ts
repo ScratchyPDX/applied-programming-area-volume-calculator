@@ -1,4 +1,5 @@
 import promptSync from 'prompt-sync';
+import {roundNumber} from './utils';
 
 export async function displayConeMenu() {
   const prompt = promptSync();
@@ -39,7 +40,7 @@ function lateralSurfaceArea() {
   const sh = prompt('Enter the slant height of the cone: ');
   const slantHeight = parseFloat(sh);
   const result = Math.PI * radius * slantHeight;
-  console.log(`The lateral surface area of the cone is: ${result}`);
+  console.log(`The lateral surface area of the cone is: ${roundNumber(result, 2)}`);
 }
 
 function surfaceArea() {
@@ -58,5 +59,5 @@ function volume() {
   const radius = parseFloat(prompt('Enter the radius of the cone: '));
   const height = parseFloat(prompt('Enter the height of the cone: '));
   const result = (1 / 3) * Math.PI * radius * radius * height;
-  console.log(`The volume of the cone is: ${result}`);
+  console.log(`The volume of the cone is: ${roundNumber(result, 2)}`);
 }

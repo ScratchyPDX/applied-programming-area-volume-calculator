@@ -1,6 +1,5 @@
-// TypeScript Code to Present a Menu of Options for Calculations
-
 import promptSync from 'prompt-sync';
+import {roundNumber} from './utils';
 
 export async function displayCircleMenu() {
   const prompt = promptSync();
@@ -39,7 +38,7 @@ function diameter() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the circle: '));
   const result = 2 * radius;
-  console.log(`The diameter of the circle is: ${result}`);
+  console.log(`The diameter of the circle is: ${roundNumber(result, 2)}`);
 }
 
 function circumference() {
@@ -47,7 +46,7 @@ function circumference() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the circle: '));
   const result = 2 * Math.PI * radius;
-  console.log(`The circumference of the circle is: ${result}`);
+  console.log(`The circumference of the circle is: ${roundNumber(result, 2)}`);
 }
 
 function area() {
@@ -55,5 +54,5 @@ function area() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the circle: '));
   const result = Math.PI * radius * radius;
-  console.log(`The area of the circle is: ${result}`);
+  console.log(`The area of the circle is: ${roundNumber(result, 2)}`);
 }
