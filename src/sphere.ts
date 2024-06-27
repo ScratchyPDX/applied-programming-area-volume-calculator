@@ -1,4 +1,5 @@
 import promptSync from 'prompt-sync';
+import {roundNumber} from './utils';
 
 export async function displaySphereMenu() {
   const prompt = promptSync();
@@ -33,7 +34,7 @@ function surfaceArea() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the cone: '));
   const result = 4 * Math.PI * Math.pow(radius, 2);
-  console.log(`The surface area of the cone is: ${result}`);
+  console.log(`The surface area of the cone is: ${roundNumber(result, 2)}`);
 }
 
 function volume() {
@@ -41,5 +42,5 @@ function volume() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the cone: '));
   const result = (4 / 3) * Math.PI * Math.pow(radius, 3);
-  console.log(`The volume of the cone is: ${result}`);
+  console.log(`The volume of the cone is: ${roundNumber(result, 2)}`);
 }

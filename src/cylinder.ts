@@ -1,4 +1,5 @@
 import promptSync from 'prompt-sync';
+import {roundNumber} from './utils';
 
 export async function displayCylinderMenu() {
   const prompt = promptSync();
@@ -38,7 +39,7 @@ function lateralSurfaceArea() {
   const radius = parseFloat(prompt('Enter the radius of the cylinder: '));
   const height = parseFloat(prompt('Enter the height of the cylinder: '));
   const result = 2 * Math.PI * radius * height;
-  console.log(`The lateral surface area of the cylinder is: ${result}`);
+  console.log(`The lateral surface area of the cylinder is: ${roundNumber(result, 2)}`);
 }
 
 function surfaceArea() {
@@ -47,7 +48,7 @@ function surfaceArea() {
   const radius = parseFloat(prompt('Enter the radius of the cylinder: '));
   const height = parseFloat(prompt('Enter the height of the cylinder: '));
   const result = 2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2);
-  console.log(`The surface area of the cylinder is: ${result}`);
+  console.log(`The surface area of the cylinder is: ${roundNumber(result, 2)}`);
 }
 
 function volume() {
@@ -56,5 +57,5 @@ function volume() {
   const radius = parseFloat(prompt('Enter the radius of the cylinder: '));
   const height = parseFloat(prompt('Enter the height of the cylinder: '));
   const result = Math.PI * Math.pow(radius, 2) * height;
-  console.log(`The volume of the cylinder is: ${result}`);
+  console.log(`The volume of the cylinder is: ${roundNumber(result, 2)}`);
 }
