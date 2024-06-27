@@ -1,18 +1,16 @@
-// TypeScript Code to Present a Menu of Options for Calculations
-
 import promptSync from 'prompt-sync';
 
-export async function displayCalculationMenu() {
+export async function displayRectangleMenu() {
   const prompt = promptSync();
   let choice = '';
 
-  while (choice !== '5') {
+  while (choice !== 'Q' && choice !== 'q') {
     console.log('\nSelect the type of calculation:');
     console.log('1. Perimeter');
     console.log('2. Area');
     console.log('3. Volume');
     console.log('4. Surface Area');
-    console.log('5. Exit');
+    console.log('Q. Return to main menu');
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
@@ -27,7 +25,8 @@ export async function displayCalculationMenu() {
       case '4':
         surfaceArea();
         break;
-      case '5':
+      case 'Q':
+      case 'q':
         console.log('\nReturning to main menu');
         return;
       default:
