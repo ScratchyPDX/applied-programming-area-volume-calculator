@@ -8,44 +8,42 @@ import * as rectangle from './rectangle';
 
 // Function to display the menu and handle user input
 function displayMenu() {
-  console.log('Please select a shape to calculate its area:');
-  console.log('1. Rectangle');
-  console.log('2. Circle');
-  console.log('3. Cone');
-  console.log('4. Cylinder');
-  console.log('5. Exit');
-
   const prompt = promptSync();
   let choice = '';
 
   while (choice !== '5') {
+    console.log('\nPlease select a shape:');
+    console.log('1. Rectangle');
+    console.log('2. Circle');
+    console.log('3. Cone');
+    console.log('4. Cylinder');
+    console.log('5. Exit');
     choice = prompt('Input you choice: ');
     // Waiting for user input
     switch (choice) {
       case '1':
-        console.log('You selected Rectangle.');
+        console.log('\nYou selected Rectangle.');
         // Call rectangle area calculation function here
         rectangle.displayCalculationMenu();
         break;
       case '2':
-        console.log('You selected Circle.');
+        console.log('\nYou selected Circle');
         // Call circle area calculation function here
         break;
       case '3':
-        console.log('You selected Cone.');
+        console.log('\nYou selected Cone');
         // Call cone area calculation function here
         break;
       case '4':
-        console.log('You selected Cylinder.');
+        console.log('\nYou selected Cylinder');
         // Call cylinder area calculation function here
         break;
       case '5':
-        console.log('Exiting the program.');
+        console.log('\nExiting program');
         exit(undefined); // Exit the menu
         break;
       default:
-        console.log('Invalid selection');
-        displayMenu(); // Display the menu again for a valid choice
+        console.log('\nInvalid selection');
         break;
     }
   }

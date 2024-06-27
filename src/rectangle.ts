@@ -3,42 +3,74 @@
 import promptSync from 'prompt-sync';
 
 export async function displayCalculationMenu() {
-  console.log('Select the type of calculation:');
-  console.log('1. Perimeter');
-  console.log('2. Area');
-  console.log('3. Volume');
-  console.log('4. Surface Area');
-  console.log('5. Exit');
-
   const prompt = promptSync();
   let choice = '';
 
   while (choice !== '5') {
+    console.log('\nSelect the type of calculation:');
+    console.log('1. Perimeter');
+    console.log('2. Area');
+    console.log('3. Volume');
+    console.log('4. Surface Area');
+    console.log('5. Exit');
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
-        console.log('You selected Perimeter.');
-        // Implement perimeter calculation here
+        perimeter();
         break;
       case '2':
-        console.log('You selected Area.');
-        // Implement area calculation here
+        area();
         break;
       case '3':
-        console.log('You selected Volume.');
-        // Implement volume calculation here
+        volume();
         break;
       case '4':
-        console.log('You selected Surface Area.');
-        // Implement surface area calculation here
+        surfaceArea();
         break;
       case '5':
-        console.log('Exiting the program.');
-        return; // Exit the program
+        console.log('\nReturning to main menu');
+        return;
       default:
-        console.log('Invalid choice. Please enter a number between 1 and 4.');
-        displayCalculationMenu(); // Re-display menu for valid input
+        console.log('\nInvalid choice. Please try again');
         break;
     }
   }
+}
+
+function perimeter() {
+  console.log('\nCalculating the perimeter of a rectangle');
+  const prompt = promptSync();
+  const length = parseFloat(prompt('Enter the length of the rectangle: '));
+  const width = parseFloat(prompt('Enter the width of the rectangle: '));
+  const result = 2 * (length + width);
+  console.log(`The perimeter of the rectangle is: ${result}`);
+}
+
+function area() {
+  console.log('\nCalculating the area of a rectangle');
+  const prompt = promptSync();
+  const length = parseFloat(prompt('Enter the length of the rectangle: '));
+  const width = parseFloat(prompt('Enter the width of the rectangle: '));
+  const result = length * width;
+  console.log(`The area of the rectangle is: ${result}`);
+}
+
+function volume() {
+  console.log('\nCalculating the volume of a rectangle');
+  const prompt = promptSync();
+  const length = parseFloat(prompt('Enter the length of the rectangle: '));
+  const width = parseFloat(prompt('Enter the width of the rectangle: '));
+  const height = parseFloat(prompt('Enter the height of the rectangle: '));
+  const result = length * width * height;
+  console.log(`The volume of the rectangle is: ${result}`);
+}
+
+function surfaceArea() {
+  console.log('\nCalculating the surface are of a rectangle.');
+  const prompt = promptSync();
+  const length = parseFloat(prompt('Enter the length of the rectangle: '));
+  const width = parseFloat(prompt('Enter the width of the rectangle: '));
+  const height = parseFloat(prompt('Enter the height of the rectangle: '));
+  const result = 2 * (length * width + width * height + height * length);
+  console.log(`The surface area of the rectangle is: ${result}`);
 }
