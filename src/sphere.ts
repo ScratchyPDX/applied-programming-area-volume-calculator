@@ -12,7 +12,7 @@ export async function displaySphereMenu() {
 
   while (choice !== 'Q' && choice !== 'q') {
 
-    displaySubMenu(menuList);
+    displaySubMenu(menuList, 'Select the type of calculation');
 
     choice = prompt('Input you choice: ');
     switch (choice) {

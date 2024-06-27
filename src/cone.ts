@@ -19,7 +19,7 @@ export async function displayConeMenu() {
     let result = 0.0;
     let height = 0.0;
 
-    displaySubMenu(menuList);
+    displaySubMenu(menuList, 'Select the type of calculation');
 
     choice = prompt('Input you choice: ');
     switch (choice) {
