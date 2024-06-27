@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-case-declarations */
 import promptSync from 'prompt-sync';
 import {roundNumber} from './utils';
 
@@ -6,6 +8,11 @@ export async function displayConeMenu() {
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
+    let radius = 0.0;
+    let slantHeight = 0.0;
+    let result = 0.0;
+    let height = 0.0;
+
     console.log('\nSelect the type of calculation:');
     console.log('1. Lateral Surface Area (LSA)');
     console.log('2. Surface Area');
@@ -14,13 +21,26 @@ export async function displayConeMenu() {
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
-        lateralSurfaceArea();
+        console.log('\nCalculating the lateral surface area of a cone');
+        radius = parseFloat(prompt('Enter the radius of the cone: '));
+        slantHeight = parseFloat(prompt('Enter the slant height of the cone: '));
+        result = lateralSurfaceArea(radius, slantHeight);
+        console.log(`The lateral surface area of the cone is: ${roundNumber(result, 2)}`);
         break;
+
       case '2':
-        surfaceArea();
+        console.log('\nCalculating the surface area of a cone');
+        radius = parseFloat(prompt('Enter the radius of the cone: '));
+        slantHeight = parseFloat(prompt('Enter the slant height of the cone: '));
+        result = surfaceArea(radius, slantHeight);
+        console.log(`The surface area of the cone is: ${roundNumber(result, 2)}`);
         break;
       case '3':
-        volume();
+        console.log('\nCalculating the volume of a cone');
+        radius = parseFloat(prompt('Enter the radius of the cone: '));
+        height = parseFloat(prompt('Enter the height of the cone: '));
+        result = volume(radius, height);
+        console.log(`The volume of the cone is: ${roundNumber(result, 2)}`);
         break;
       case 'Q':
       case 'q':
@@ -33,31 +53,14 @@ export async function displayConeMenu() {
   }
 }
 
-function lateralSurfaceArea() {
-  console.log('\nCalculating the lateral surface area of a cone');
-  const prompt = promptSync();
-  const radius = parseFloat(prompt('Enter the radius of the cone: '));
-  const sh = prompt('Enter the slant height of the cone: ');
-  const slantHeight = parseFloat(sh);
-  const result = Math.PI * radius * slantHeight;
-  console.log(`The lateral surface area of the cone is: ${roundNumber(result, 2)}`);
+function lateralSurfaceArea(radius: number, slantHeight: number): number {
+  return Math.PI * radius * slantHeight;
 }
 
-function surfaceArea() {
-  console.log('\nCalculating the surface area of a cone');
-  const prompt = promptSync();
-  const radius = parseFloat(prompt('Enter the radius of the cone: '));
-  const sh = prompt('Enter the slant height of the cone: ');
-  const slantHeight = parseFloat(sh);
-  const result = Math.PI * radius * (radius + slantHeight);
-  console.log(`The surface area of the cone is: ${result}`);
+function surfaceArea(radius: number, slantHeight: number): number {
+  return Math.PI * radius * (radius + slantHeight);
 }
 
-function volume() {
-  console.log('\nCalculating the volume of a cone');
-  const prompt = promptSync();
-  const radius = parseFloat(prompt('Enter the radius of the cone: '));
-  const height = parseFloat(prompt('Enter the height of the cone: '));
-  const result = (1 / 3) * Math.PI * radius * radius * height;
-  console.log(`The volume of the cone is: ${roundNumber(result, 2)}`);
+function volume(radius: number, height: number): number {
+  return (1 / 3) * Math.PI * radius * radius * height;
 }
