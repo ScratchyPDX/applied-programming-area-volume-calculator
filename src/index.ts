@@ -19,7 +19,7 @@ function displayMenu() {
     console.log('3. Cone');
     console.log('4. Cylinder');
     console.log('5. Sphere');
-    console.log('6. Exit');
+    console.log('Q. Exit');
     choice = prompt('Input you choice: ');
     // Waiting for user input
     switch (choice) {
