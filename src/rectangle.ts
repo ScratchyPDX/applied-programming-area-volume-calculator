@@ -1,11 +1,11 @@
 import promptSync from 'prompt-sync';
 import {roundNumber, displaySubMenu} from './utils';
 
-const menuList: { item: number, name: string }[] = [
-  { 'item': 1, 'name': 'Perimeter' },
-  { 'item': 2, 'name': 'Area' },
-  { 'item': 3, 'name': 'Volume' },
-  { 'item': 3, 'name': 'Surface Area' }
+const menuList: {item: number; name: string}[] = [
+  {item: 1, name: 'Perimeter'},
+  {item: 2, name: 'Area'},
+  {item: 3, name: 'Volume'},
+  {item: 3, name: 'Surface Area'},
 ];
 
 export async function displayRectangleMenu() {
@@ -13,7 +13,6 @@ export async function displayRectangleMenu() {
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
-
     displaySubMenu(menuList, 'Select the type of calculation');
 
     choice = prompt('Input you choice: ');
@@ -76,5 +75,7 @@ function surfaceArea() {
   const width = parseFloat(prompt('Enter the width of the rectangle: '));
   const height = parseFloat(prompt('Enter the height of the rectangle: '));
   const result = 2 * (length * width + width * height + height * length);
-  console.log(`The surface area of the rectangle is: ${roundNumber(result, 2)}`);
+  console.log(
+    `The surface area of the rectangle is: ${roundNumber(result, 2)}`
+  );
 }

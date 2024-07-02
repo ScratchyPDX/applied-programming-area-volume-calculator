@@ -1,10 +1,10 @@
 import promptSync from 'prompt-sync';
 import {roundNumber, displaySubMenu} from './utils';
 
-const menuList: { item: number, name: string }[] = [
-  { 'item': 1, 'name': 'Lateral Surface Area (LSA)' },
-  { 'item': 2, 'name': 'Surface Area' },
-  { 'item': 3, 'name': 'Volume' }
+const menuList: {item: number; name: string}[] = [
+  {item: 1, name: 'Lateral Surface Area (LSA)'},
+  {item: 2, name: 'Surface Area'},
+  {item: 3, name: 'Volume'},
 ];
 
 export async function displayCylinderMenu() {
@@ -12,7 +12,6 @@ export async function displayCylinderMenu() {
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
-
     displaySubMenu(menuList, 'Select the type of calculation');
 
     choice = prompt('Input you choice: ');
@@ -43,7 +42,9 @@ function lateralSurfaceArea() {
   const radius = parseFloat(prompt('Enter the radius of the cylinder: '));
   const height = parseFloat(prompt('Enter the height of the cylinder: '));
   const result = 2 * Math.PI * radius * height;
-  console.log(`The lateral surface area of the cylinder is: ${roundNumber(result, 2)}`);
+  console.log(
+    `The lateral surface area of the cylinder is: ${roundNumber(result, 2)}`
+  );
 }
 
 function surfaceArea() {
@@ -51,7 +52,8 @@ function surfaceArea() {
   const prompt = promptSync();
   const radius = parseFloat(prompt('Enter the radius of the cylinder: '));
   const height = parseFloat(prompt('Enter the height of the cylinder: '));
-  const result = 2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2);
+  const result =
+    2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2);
   console.log(`The surface area of the cylinder is: ${roundNumber(result, 2)}`);
 }
 
