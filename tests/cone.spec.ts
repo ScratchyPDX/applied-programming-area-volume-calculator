@@ -1,5 +1,5 @@
 // myFunction.test.ts
-import {lateralSurfaceArea, surfaceArea} from '../src/cone';
+import {lateralSurfaceArea, surfaceArea, volume} from '../src/cone';
 
 describe('cone calculation methods', () => {
   it('should return the correct result for lateral surface area', () => {
@@ -9,5 +9,9 @@ describe('cone calculation methods', () => {
   it('should return the correct result for surface area', () => {
     const result = surfaceArea(5, 12);
     expect(result).toBe(267.0353755551324);
+  });
+  it('should return the corect result for the volume', () => {
+    const result = volume(15, 8);
+    expect(result).toBe(1884.9555921538756);
   });
 });
