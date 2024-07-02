@@ -1,5 +1,5 @@
 // myFunction.test.ts
-import {lateralSurfaceArea, surfaceArea} from './cone';
+import {lateralSurfaceArea, surfaceArea} from '../src/cone';
 
 describe('cone calculation methods', () => {
   it('should return the correct result for lateral surface area', () => {
