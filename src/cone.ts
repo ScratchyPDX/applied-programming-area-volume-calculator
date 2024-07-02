@@ -53,14 +53,14 @@ export async function displayConeMenu() {
   }
 }
 
-function lateralSurfaceArea(radius: number, slantHeight: number): number {
+export function lateralSurfaceArea(radius: number, slantHeight: number): number {
   return Math.PI * radius * slantHeight;
 }
 
-function surfaceArea(radius: number, slantHeight: number): number {
+export function surfaceArea(radius: number, slantHeight: number): number {
   return Math.PI * radius * (radius + slantHeight);
 }
 
-function volume(radius: number, height: number): number {
+export function volume(radius: number, height: number): number {
   return (1 / 3) * Math.PI * radius * radius * height;
 }
