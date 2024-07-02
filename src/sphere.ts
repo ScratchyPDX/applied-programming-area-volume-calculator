@@ -1,15 +1,19 @@
 import promptSync from 'prompt-sync';
-import {roundNumber} from './utils';
+import {roundNumber, displaySubMenu} from './utils';
+
+const menuList: { item: number, name: string }[] = [
+  { 'item': 1, 'name': 'Surface Area' },
+  { 'item': 2, 'name': 'Volume' }
+];
 
 export async function displaySphereMenu() {
   const prompt = promptSync();
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
-    console.log('\nSelect the type of calculation:');
-    console.log('1. Surface Area');
-    console.log('2. Volume');
-    console.log('Q. Return to main menu');
+
+    displaySubMenu(menuList, 'Select the type of calculation');
+
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':

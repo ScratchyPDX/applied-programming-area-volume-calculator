@@ -1,17 +1,21 @@
 import promptSync from 'prompt-sync';
-import {roundNumber} from './utils';
+import {roundNumber, displaySubMenu} from './utils';
+
+const menuList: { item: number, name: string }[] = [
+  { 'item': 1, 'name': 'Perimeter' },
+  { 'item': 2, 'name': 'Area' },
+  { 'item': 3, 'name': 'Volume' },
+  { 'item': 3, 'name': 'Surface Area' }
+];
 
 export async function displayRectangleMenu() {
   const prompt = promptSync();
   let choice = '';
 
   while (choice !== 'Q' && choice !== 'q') {
-    console.log('\nSelect the type of calculation:');
-    console.log('1. Perimeter');
-    console.log('2. Area');
-    console.log('3. Volume');
-    console.log('4. Surface Area');
-    console.log('Q. Return to main menu');
+
+    displaySubMenu(menuList, 'Select the type of calculation');
+
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
