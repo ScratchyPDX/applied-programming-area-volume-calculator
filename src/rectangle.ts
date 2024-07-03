@@ -11,6 +11,10 @@ const menuList: {item: number; name: string}[] = [
 export async function displayRectangleMenu() {
   const prompt = promptSync();
   let choice = '';
+  let length = 0.0;
+  let width = 0.0;
+  let height = 0.0;
+  let result = 0.0;
 
   while (choice !== 'Q' && choice !== 'q') {
     displaySubMenu(menuList, 'Select the type of calculation');
@@ -18,16 +22,40 @@ export async function displayRectangleMenu() {
     choice = prompt('Input you choice: ');
     switch (choice) {
       case '1':
-        perimeter();
+        console.log('\nCalculating the perimeter of a rectangle');
+        length = parseFloat(prompt('Enter the length of the rectangle: '));
+        width = parseFloat(prompt('Enter the width of the rectangle: '));
+        result = perimeter(length, width);
+        console.log(
+          `The perimeter of the rectangle is: ${roundNumber(result, 2)}`
+        );
         break;
       case '2':
-        area();
+        console.log('\nCalculating the area of a rectangle');
+        length = parseFloat(prompt('Enter the length of the rectangle: '));
+        width = parseFloat(prompt('Enter the width of the rectangle: '));
+        result = area(length, width);
+        console.log(`The area of the rectangle is: ${roundNumber(result, 2)}`);
         break;
       case '3':
-        volume();
+        console.log('\nCalculating the volume of a rectangle');
+        length = parseFloat(prompt('Enter the length of the rectangle: '));
+        width = parseFloat(prompt('Enter the width of the rectangle: '));
+        height = parseFloat(prompt('Enter the height of the rectangle: '));
+        result = volume(length, width, height);
+        console.log(
+          `The volume of the rectangle is: ${roundNumber(result, 2)}`
+        );
         break;
       case '4':
-        surfaceArea();
+        console.log('\nCalculating the surface are of a rectangle.');
+        length = parseFloat(prompt('Enter the length of the rectangle: '));
+        width = parseFloat(prompt('Enter the width of the rectangle: '));
+        height = parseFloat(prompt('Enter the height of the rectangle: '));
+        result = surfaceArea(length, width, height);
+        console.log(
+          `The surface area of the rectangle is: ${roundNumber(result, 2)}`
+        );
         break;
       case 'Q':
       case 'q':
@@ -40,42 +68,18 @@ export async function displayRectangleMenu() {
   }
 }
 
-function perimeter() {
-  console.log('\nCalculating the perimeter of a rectangle');
-  const prompt = promptSync();
-  const length = parseFloat(prompt('Enter the length of the rectangle: '));
-  const width = parseFloat(prompt('Enter the width of the rectangle: '));
-  const result = 2 * (length + width);
-  console.log(`The perimeter of the rectangle is: ${roundNumber(result, 2)}`);
+function perimeter(length: number, width: number): number {
+  return 2 * (length + width);
 }
 
-function area() {
-  console.log('\nCalculating the area of a rectangle');
-  const prompt = promptSync();
-  const length = parseFloat(prompt('Enter the length of the rectangle: '));
-  const width = parseFloat(prompt('Enter the width of the rectangle: '));
-  const result = length * width;
-  console.log(`The area of the rectangle is: ${roundNumber(result, 2)}`);
+function area(length: number, width: number): number {
+  return length * width;
 }
 
-function volume() {
-  console.log('\nCalculating the volume of a rectangle');
-  const prompt = promptSync();
-  const length = parseFloat(prompt('Enter the length of the rectangle: '));
-  const width = parseFloat(prompt('Enter the width of the rectangle: '));
-  const height = parseFloat(prompt('Enter the height of the rectangle: '));
-  const result = length * width * height;
-  console.log(`The volume of the rectangle is: ${roundNumber(result, 2)}`);
+function volume(length: number, width: number, height: number): number {
+  return length * width * height;
 }
 
-function surfaceArea() {
-  console.log('\nCalculating the surface are of a rectangle.');
-  const prompt = promptSync();
-  const length = parseFloat(prompt('Enter the length of the rectangle: '));
-  const width = parseFloat(prompt('Enter the width of the rectangle: '));
-  const height = parseFloat(prompt('Enter the height of the rectangle: '));
-  const result = 2 * (length * width + width * height + height * length);
-  console.log(
-    `The surface area of the rectangle is: ${roundNumber(result, 2)}`
-  );
+function surfaceArea(length: number, width: number, height: number): number {
+  return 2 * (length * width + width * height + height * length);
 }
