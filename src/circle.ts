@@ -49,14 +49,14 @@ export async function displayCircleMenu() {
   }
 }
 
-function diameter(radius: number): number {
+export function diameter(radius: number): number {
   return 2 * radius;
 }
 
-function circumference(radius: number): number {
+export function circumference(radius: number): number {
   return 2 * Math.PI * radius;
 }
 
-function area(radius: number): number {
+export function area(radius: number): number {
   return Math.PI * radius * radius;
 }

@@ -55,14 +55,14 @@ export async function displayCylinderMenu() {
   }
 }
 
-function lateralSurfaceArea(radius: number, height: number): number {
+export function lateralSurfaceArea(radius: number, height: number): number {
   return 2 * Math.PI * radius * height;
 }
 
-function surfaceArea(radius: number, height: number): number {
+export function surfaceArea(radius: number, height: number): number {
   return 2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2);
 }
 
-function volume(radius: number, height: number): number {
+export function volume(radius: number, height: number): number {
   return Math.PI * Math.pow(radius, 2) * height;
 }

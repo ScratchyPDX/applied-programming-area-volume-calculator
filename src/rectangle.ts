@@ -68,18 +68,19 @@ export async function displayRectangleMenu() {
   }
 }
 
-function perimeter(length: number, width: number): number {
+export function perimeter(length: number, width: number): number {
   return 2 * (length + width);
 }
 
-function area(length: number, width: number): number {
+export function area(length: number, width: number): number {
   return length * width;
 }
 
-function volume(length: number, width: number, height: number): number {
+export function volume(length: number, width: number, height: number): number {
   return length * width * height;
 }
 
-function surfaceArea(length: number, width: number, height: number): number {
+// eslint-disable-next-line prettier/prettier
+export function surfaceArea(length: number, width: number, height: number): number {
   return 2 * (length * width + width * height + height * length);
 }

@@ -42,10 +42,10 @@ export async function displaySphereMenu() {
   }
 }
 
-function surfaceArea(radius: number): number {
+export function surfaceArea(radius: number): number {
   return 4 * Math.PI * Math.pow(radius, 2);
 }
 
-function volume(radius: number): number {
+export function volume(radius: number): number {
   return (4 / 3) * Math.PI * Math.pow(radius, 3);
 }
